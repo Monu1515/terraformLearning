@@ -8,7 +8,7 @@ resource "aws_instance" "r100c96" {
   }
 
   provisioner "remote-exec" {
-    inline = [ "echo Hi Terraform" ]
+    inline = [ "sudo yum update all","sudo yum install python3 -y" ]
     connection {
       host        = aws_instance.r100c96.public_dns
       type        = "ssh"
