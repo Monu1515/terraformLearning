@@ -1,10 +1,10 @@
 resource "aws_instance" "r100c96" {
-  ami               = "ami-0a9d27a9f4f5c0efc"
+  ami               = "ami-0c02fb55956c7d316"
   instance_type     = "t2.micro"
-  availability_zone = "ap-south-1b"
+  availability_zone = "us-east-1"
   key_name          = "devops"
   tags = {
-    Name = "Terraform-diff-linux"
+    Name = "Terraform-Ansible"
   }
 
   provisioner "remote-exec" {
