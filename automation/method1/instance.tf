@@ -2,18 +2,18 @@ resource "aws_instance" "r100c96" {
   ami               = "ami-0a9d27a9f4f5c0efc"
   instance_type     = "t2.micro"
   availability_zone = "ap-south-1b"
-  key_name          = "aws-exam-testing"
+  key_name          = "devops"
   tags = {
     Name = "Terraform-diff-linux"
   }
 
   provisioner "remote-exec" {
-    inline = [ "sudo hostnamectl set-hostname cloudEc2.technix.com" ]
+    inline = [ "echo Hi Terraform" ]
     connection {
       host        = aws_instance.r100c96.public_dns
       type        = "ssh"
       user        = "ec2-user"
-      private_key = file("./aws-exam-testing.pem")
+      private_key = file("./devops.pem")
     }
   }
 
