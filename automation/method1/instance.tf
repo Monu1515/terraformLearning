@@ -1,7 +1,7 @@
 resource "aws_instance" "r100c96" {
   ami               = "ami-0c02fb55956c7d316"
   instance_type     = "t2.micro"
-  availability_zone = "us-east-1"
+  availability_zone = "us-east-1a"
   key_name          = "devops"
   tags = {
     Name = "Terraform-Ansible"
